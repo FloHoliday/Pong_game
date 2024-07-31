@@ -12,8 +12,8 @@ screen.bgcolor("black")
 screen.title("PONG")
 screen.tracer(0)
 
-r_paddle = Paddle((350, 0))
-l_paddle = Paddle((-350, 0))
+r_paddle = Paddle((350, 0), "green")
+l_paddle = Paddle((-350, 0), "red")
 ball = Ball()
 scoreboard = Scoreboard()
 
@@ -25,6 +25,7 @@ screen.onkey(l_paddle.go_up, "w")
 screen.onkey(l_paddle.go_down, "s")
 
 while game_is_on:
+    time.sleep(0.0001)
     time.sleep(ball.move_speed)
     screen.update()
     ball.move()
@@ -48,4 +49,4 @@ while game_is_on:
         ball.reset_position()
         scoreboard.r_point()
 
-screen.exitonclick()
+    screen.exitonclick()
