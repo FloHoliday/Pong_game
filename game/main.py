@@ -32,7 +32,7 @@ def main():
         if ball.ycor() > 290 or ball.ycor() < -290:
             ball.bounce_y()
 
-        #Detect collisionwith paddles
+        # Detect collision paddles
         if (ball.distance(r_paddle) < 50 and ball.xcor() > 320) or (
                 ball.distance(l_paddle) < 50 and ball.xcor() < -320):
             ball.bounce_x()
@@ -48,6 +48,7 @@ def main():
             scoreboard.r_point()
 
     screen.exitonclick()
+
 
 if __name__ == "__main__":
     main()
